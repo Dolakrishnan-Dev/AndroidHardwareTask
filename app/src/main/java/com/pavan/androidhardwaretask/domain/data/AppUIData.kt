@@ -20,7 +20,7 @@ data class AppUIData(
 
 
 data class AppListData(
-    val suggestedApps: List<AppUIData>,
-    val others: List<AppUIData>,
+    val suggestedApps: MutableList<AppUIData> = mutableListOf(),
+    val others: MutableList<AppUIData> = mutableListOf(),
     val isChanged: Int = 0
 )
