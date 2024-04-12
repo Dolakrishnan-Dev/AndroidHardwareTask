@@ -29,22 +29,28 @@ fun MainScreen(appListData: MutableState<AppListData>, padding: PaddingValues, o
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .background(color = Color.White)
-            .padding(padding)
+                .fillMaxSize()
+                .background(color = Color.White)
+                .padding(padding)
     ) {
 
         var showBottomSheet by remember {
             mutableStateOf(false)
         }
 
-        AppListWidget(appListData) {
-            onCheckboxChanged(it)
+        Column(Modifier.weight(0.9f)) {
+            AppListWidget(appListData) {
+                onCheckboxChanged(it)
+            }
         }
 
-        Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth().padding(10.dp)) {
-            FloatingActionButton(onClick = { showBottomSheet = showBottomSheet.not() }) {
-                Icon(Icons.Default.Add, contentDescription = "Add Icon")
+        Column(Modifier.weight(0.1f)) {
+            Row(horizontalArrangement = Arrangement.End, modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp)) {
+                FloatingActionButton(onClick = { showBottomSheet = showBottomSheet.not() }) {
+                    Icon(Icons.Default.Add, contentDescription = "Add Icon")
+                }
             }
         }
 

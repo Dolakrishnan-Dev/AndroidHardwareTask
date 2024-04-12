@@ -1,7 +1,5 @@
 package com.pavan.androidhardwaretask.presentation.ui.widget
 
-import android.util.Log
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,10 +14,9 @@ import com.pavan.androidhardwaretask.domain.data.AppListData
 import com.pavan.androidhardwaretask.domain.data.AppUIData
 
 @Composable
-fun ColumnScope.AppListWidget(appListData: MutableState<AppListData>, onCheckboxChanged: (AppListData) -> Unit) {
+fun AppListWidget(appListData: MutableState<AppListData>, onCheckboxChanged: (AppListData) -> Unit) {
 
     LazyColumn(modifier = Modifier
-        .weight(1f)
         .padding(5.dp)) {
 
         item {
